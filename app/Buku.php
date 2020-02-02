@@ -15,4 +15,10 @@ class Buku extends Model
     'stok',
     'gambar'
   ];
+
+  public function detail(){
+    return $this->hasMany('App\Detail_pinjam','id');
+  }
+
+
 }

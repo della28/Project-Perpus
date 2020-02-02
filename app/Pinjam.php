@@ -8,7 +8,7 @@ class Pinjam extends Model
 {
   protected $table="peminjaman";
   protected $primaryKey="id";
-  
+
 
   protected $fillable = [
     'id_anggota',
@@ -22,6 +22,9 @@ class Pinjam extends Model
   }
   public function petugas() {
     return $this->belongsTo('App/Petugas', 'id_petugas');
+  }
+  public function detail(){
+    return $this->hasOne('App\Detail_pinjam','id');
   }
 
 }
