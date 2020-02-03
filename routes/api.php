@@ -54,4 +54,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
   Route::post('/simpan_detail','PinjamController@simpan')->middleware('jwt.verify');
   Route::put('/ubah_detail/{id}','PinjamController@ubah')->middleware('jwt.verify');
   Route::delete('/hapus_detail/{id}','PinjamController@hapus')->middleware('jwt.verify');
-  Route::get('/tampil_detail','PinjamController@tampil_detail')->middleware('jwt.verify');
+  
