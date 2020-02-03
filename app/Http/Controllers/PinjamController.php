@@ -20,7 +20,7 @@ class PinjamController extends Controller
       $peminjaman=DB::table('peminjaman')
       ->join('anggota','anggota.id','=','peminjaman.id_anggota')
       ->join('petugas','petugas.id','=','peminjaman.id_petugas')
-      ->select('peminjaman.id','peminjaman.id_anggota','anggota.nama_anggota','peminjaman.tgl_pinjam','peminjaman.deadline','peminjaman.denda')
+      ->select('peminjaman.id','peminjaman.id_anggota','anggota.nama_anggota','peminjaman.id_petugas','peminjaman.tgl_pinjam','peminjaman.deadline','peminjaman.denda')
       ->get();
 
       $data=array();
@@ -39,6 +39,7 @@ class PinjamController extends Controller
           'id' => $dt_pj->id,
           'id_anggota' => $dt_pj->id_anggota,
           'nama_anggota' => $dt_pj->nama_anggota,
+          'id_petugas' => $dt_pj->id_petugas,
           'tgl_pinjam' => $dt_pj->tgl_pinjam,
           'deadline' => $dt_pj->deadline,
           'denda' => $dt_pj->denda,
@@ -199,7 +200,7 @@ class PinjamController extends Controller
 }
 
 
-public function hapus($id){
+  public function hapus($id){
   $hapus=Detail_pinjam::where('id',$id)->delete();
   $status=1;
   $message="Detail Peminjaman Berhasil Dihapus";
@@ -211,7 +212,7 @@ public function hapus($id){
 }
 
 
-  
+
 
 
 

@@ -14,7 +14,8 @@ class Pinjam extends Model
     'id_anggota',
     'id_petugas',
     'tgl_pinjam',
-    'deadline'
+    'deadline',
+    'denda'
   ];
 
   public function anggota() {
