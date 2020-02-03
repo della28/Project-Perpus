@@ -25,7 +25,7 @@ class Pinjam extends Model
     return $this->belongsTo('App/Petugas', 'id_petugas');
   }
   public function detail(){
-    return $this->hasOne('App\Detail_pinjam','id');
+    return $this->hasMany('App\Detail_pinjam','id');
   }
 
 }
